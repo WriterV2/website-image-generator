@@ -1,0 +1,11 @@
+__pycache__/
+build/
+dist/
+[Bb]in/
+[Ll]ib/
+[Ll]ib64
+[Ii]nclude/
+*.spec
+*.manifest
+pyvenv.cfg
+*.png
