@@ -2,7 +2,7 @@ import argparse
 import glob
 import re
 
-from PIL import Image, ImageFilter, ImageOps
+from PIL import Image, ImageFilter, ImageOps, ImageEnhance
 from diffusers import StableDiffusionPipeline
 
 def main():
@@ -26,6 +26,10 @@ def main():
 
     # invert colors to get white foreground on black background
     image = ImageOps.invert(image)
+
+    # reduce brightness by 50%
+    brightness_enhancer = ImageEnhance.Brightness(image)
+    image = brightness_enhancer.enhance(0.2)
 
     # determine output file path
     if args.output:
